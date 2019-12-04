@@ -23,3 +23,8 @@ Route.get('/', () => {
 Route.get('users/:id', 'UserController.show').middleware('auth')
 Route.post('login', 'UserController.login')
 Route.post('register', 'UserController.register')
+
+Route.put('/posts/:id', 'PostController.update').middleware('auth')
+Route.delete('posts/id', 'PostController.delete').middleware('auth')
+Route.post('/posts', 'PostController.store').middleware('auth')
+Route.get('/posts', 'PostController.getPosts');
