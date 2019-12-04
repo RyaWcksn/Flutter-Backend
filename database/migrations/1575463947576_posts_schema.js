@@ -9,6 +9,8 @@ class PostsSchema extends Schema {
       table.increments()
       table.string('Title', 100)
       table.text('Post', 'longtext')
+      table.integer('user_id').unsigned();
+      table.foreign('user_id').references('Users.id').onDelete('cascade')
       table.timestamps()
     })
   }
